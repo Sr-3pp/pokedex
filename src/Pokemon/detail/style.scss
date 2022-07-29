@@ -52,6 +52,7 @@
         @media (min-width: #{$breakpoint-sm}) {
             max-height: inherit;
             flex-direction: row;
+            overflow: visible;
         }
     }
     

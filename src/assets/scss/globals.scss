@@ -1,0 +1,45 @@
+@import './variables.scss';
+@import './functions.scss';
+@import './grid.scss';
+@import './container.scss';
+
+
+*{
+    box-sizing: border-box;
+}
+
+ul, ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+figure{
+    margin: 0;
+}
+
+.button{
+    background-color: $color-red;
+    color: $color-white;
+    border-radius: unit(4);
+    font-size: unit(16);
+    font-weight: bold;
+    white-space: pre;
+    padding: unit(10);
+    cursor: pointer;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}

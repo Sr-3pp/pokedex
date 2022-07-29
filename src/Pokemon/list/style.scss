@@ -1,0 +1,28 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/functions.scss';
+
+.pokemon-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    &-item{
+        width: 100%;
+        padding: unit(10);
+        >*{
+            height: 100%;
+        }
+
+        @media (min-width: #{$breakpoint-sm}){
+            width: calcUnit(50, 10);
+        }
+        
+        @media (min-width: #{$breakpoint-md}){
+            width: calcUnit(25, 10);
+        }
+    }
+    button{
+        overflow: visible;
+    }
+}

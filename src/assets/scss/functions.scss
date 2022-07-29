@@ -1,0 +1,7 @@
+@function unit($unit, $type: "rem", $browserUnit: 16) {
+    @return #{calc($unit / $browserUnit)}#{unquote($type)};
+}
+  
+@function calcUnit($per, $unit, $kind: "%", $type: "rem", $browserUnit: 16) {
+    @return #{calc(#{$per}#{$kind} - #{$unit * 2 / $browserUnit}#{unquote($type)})};
+}

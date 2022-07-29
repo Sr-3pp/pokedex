@@ -1,0 +1,25 @@
+@import './variables.scss';
+@import './functions.scss';
+
+.container{
+    width: 100%;
+    padding-right: unit(20);
+    padding-left: unit(20);
+
+    @media(min-width: $breakpoint-sm){
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: unit(680);
+        max-width: inherit;
+    }
+    
+    @media(min-width: $breakpoint-md){
+        width: unit(980);
+    }
+    
+    @media(min-width: $breakpoint-lg){
+        width: unit(1100);
+    }
+}

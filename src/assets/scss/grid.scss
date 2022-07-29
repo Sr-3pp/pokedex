@@ -1,0 +1,62 @@
+@import './variables.scss';
+@import './functions.scss';
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-right: unit(-10);
+    margin-left: unit(-10);
+}
+
+$_breakpoints: (
+  sm: 'print, (min-width: #{$breakpoint-sm})',
+  md: 'print, (min-width: #{$breakpoint-md})',
+  lg: '(min-width: #{$breakpoint-lg})',
+  xl: '(min-width: #{$breakpoint-xl})',
+);
+
+/** Keys need to be escaped twice: [1]@each -> [2]with-responsive (?) */
+$_col-widths: (
+  '1': 100%,
+  '1\\/12': 8.333333%,
+  '1\\/8': 12.5%,
+  '1\\/6': 16.666667%,
+  '1\\/5': 20%,
+  '1\\/4': 25%,
+  '1\\/3': 33.333333%,
+  '2\\/5': 40%,
+  '1\\/2': 50%,
+  '3\\/5': 60%,
+  '2\\/3': 66.666667%,
+  '3\\/4': 75%,
+  '4\\/5': 80%,
+  '5\\/6': 83.333333%,
+  '7\\/8': 87.5%,
+  '11\\/12': 91.666667%,
+);
+
+[class*='col-'] {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  //padding: $size-10;
+}
+
+@each $col-key, $col-value in $_col-widths {
+  .col-#{$col-key} {
+    width: $col-value;
+    max-width: $col-value;
+  }
+}
+
+@each $breakpoint-key, $breakpoint-value in $_breakpoints {
+  @media #{$breakpoint-value} {
+    @each $col-key, $col-value in $_col-widths {
+      .#{$breakpoint-key}\:col-#{$col-key} {
+        width: $col-value;
+        max-width: $col-value;
+      }
+    }
+  }
+}

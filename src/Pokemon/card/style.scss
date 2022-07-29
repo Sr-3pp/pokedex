@@ -1,0 +1,257 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/functions.scss';
+
+.pokemon-card{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    padding: unit(10);
+    transition: box-shadow .35s ease, transform .35s ease;
+    border: {
+        color: $color-gray;
+        width: unit(1);
+        style: solid;
+        radius: unit(15);
+    }
+    &-header{
+        display: flex;
+    }
+
+    .img{
+        width: 60%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img{
+        transition: transform .35s ease;
+    }
+
+    &:hover{
+        img{
+            transform: scale(1.3);
+        }
+        box-shadow: 0 unit(5) unit(10) rgba($color-gray, .5);
+        transform: scale(1.02);
+    }
+
+    &-info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-name{
+        font-size: unit(16);
+        font-weight: bold;
+    }
+
+    &-weaknesses{
+        display: flex;
+        align-items: flex-end;
+
+        svg{
+            margin-left: auto;
+        }
+    }
+
+    &-evolutions{
+        position: absolute;
+        left: unit(10);
+        top: unit(35);
+        li{
+            border-radius: 100%;
+            background-color: $color-gray;
+            width: unit(8);
+            height: unit(8);
+            margin-bottom: unit(4);
+        }
+    }
+}
+
+[data-type="poison"]{
+    background: $color-type-poison;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-poison, .5) 100%);
+}
+
+[data-type="grass"]{
+    background: $color-type-grass;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-grass, .5) 100%);
+}
+
+[data-type="bug"]{
+    background: $color-type-bug;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-bug, .5) 100%);
+}
+
+[data-type="water"]{
+    background: $color-type-water;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-water, .5) 100%);
+}
+
+[data-type="fire"]{
+    background: $color-type-fire;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-fire, .5) 100%);
+}
+
+[data-type="normal"]{
+    background: $color-type-normal;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-normal, .5) 100%);
+}
+
+[data-type="flying"]{
+    background: $color-type-flying;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-flying, .5) 100%);
+}
+
+[data-type="electric"]{
+    background: $color-type-electric;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-electric, .5) 100%);
+}
+
+[data-type="ground"]{
+    background: $color-type-ground;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-ground, .5) 100%);
+}
+
+[data-type="fighting"]{
+    background: $color-type-fighting;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-fighting, .5) 100%);
+}
+
+[data-type="physic"]{
+    background: $color-type-physic;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-physic, .5) 100%);
+}
+
+[data-type="ghost"]{
+    background: $color-type-ghost;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-ghost, .5) 100%);
+}
+
+[data-type="ice"]{
+    background: $color-type-ice;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-ice, .5) 100%);
+}
+
+[data-type="rock"]{
+    background: $color-type-rock;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-rock, .5) 100%);
+}
+
+[data-type="dragon"]{
+    background: $color-type-dragon;
+    background: linear-gradient(180deg, $color-white 0%, rgba($color-type-dragon, .5) 100%);
+}
+
+.pokemon{
+    &-types{
+        display: flex;
+        margin-left: auto;
+    }
+    &-type{
+
+        &:not(:last-child){
+            margin-right: unit(10);
+        }
+
+        p{
+            display: flex;
+            width: unit(20);
+            height: unit(20);
+            border-radius: 100%;
+            position: relative;
+            margin: 0;
+            >span{
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: unit(6);
+                border-radius: unit(4);
+                font-size: unit(12);
+                color: $color-white;
+                background-color: $color-gray;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity .35s ease;
+            }
+            &:hover{
+                span{
+                    opacity: 1;
+                z-index: 1;
+                }
+            }
+        }
+
+
+        .poison{
+            background-color: $color-type-poison;
+        }
+        .grass{
+            background-color: $color-type-grass;
+        }
+        .bug{
+            background-color: $color-type-bug;
+        }
+        .water{
+            background-color: $color-type-water;
+        }
+        .fire{
+            background-color: $color-type-fire;
+        }
+        .normal{
+            background-color: $color-type-normal;
+        }
+        .flying{
+            background-color: $color-type-flying;
+        }
+        .electric{
+            background-color: $color-type-electric;
+        }
+        .ground{
+            background-color: $color-type-ground;
+        }
+        .fighting{
+            background-color: $color-type-fighting;
+        }
+        .psychic{
+            background-color: $color-type-physic;
+        }
+        .ghost{
+            background-color: $color-type-ghost;
+        }
+        .rock{
+            background-color: $color-type-rock;
+        }
+        .ice{
+            background-color: $color-type-ice;
+        }
+        .dragon{
+            background-color: $color-type-dragon;
+        }
+
+    }
+
+    &-num{
+        font-weight: bold;
+        font-size: unit(12);
+    }
+
+    &-weaknesses{
+        border-top: {
+            style: solid;
+            color: rgba($color-gray, .5);
+            width: unit(1);
+        };
+        padding-top: unit(10);
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            padding: 0 unit(10);
+        }
+    }
+}

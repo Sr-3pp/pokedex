@@ -1,0 +1,25 @@
+@import '../assets/scss/variables.scss';
+@import '../assets/scss/functions.scss';
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    label{
+        font-size: unit(14);
+        font-weight: bold;
+        color: $color-gray;
+    }
+    input{
+        box-sizing: border-box;
+        width: 100%;
+        height: unit(30);
+        padding: unit(6);
+        border: {
+            style: solid;
+            color: $color-gray;
+            width: unit(1);
+            radius: unit(4)
+        };
+    }
+}

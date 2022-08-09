@@ -7,6 +7,7 @@ export default class PokemonDetails extends Component{
     }
 
     changePokemon = (p) => {
+        console.log(p);
         this.props.changePokemon(p)
     }
 

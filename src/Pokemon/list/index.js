@@ -36,7 +36,7 @@ export default class PokemonList extends Component{
                     p.evolutions = p.next_evolution.map((evolution) => {
                         const idx = list.findIndex(fp=> fp.num === evolution.num)
                         if(idx >= 0){
-                            return list.splice(idx, 1)[0]
+                            return this.raw.slice(idx, 1)[0]
                         }
                         return null
                     }).filter(l => l)
